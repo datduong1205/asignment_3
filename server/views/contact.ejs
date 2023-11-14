@@ -1,0 +1,43 @@
+<% include partials/header.ejs %> <% include partials/main_nav.ejs %>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="contact_left_column">
+        <h1 class="sub_title">Contact Me</h1>
+        <p>soundgreat12@gmail.com</p>
+        <p>437-xxx-xxxx</p>
+        <a href="./img/CV_DuongLeMinhDat.pdf" download class="button"
+          >Download CV</a
+        >
+      </div>
+      <div class="contact_right_column">
+        <form action="mailto:soundgreat12@gmail.com">
+          <input
+            type="text"
+            name="Name"
+            placeholder="Your Name"
+            size="40"
+            required
+          />
+          <input
+            type="email"
+            name="Email"
+            placeholder="Your Email"
+            size="20"
+            required
+          />
+          <textarea
+            name="Message"
+            rows="6"
+            placeholder="Question, comment or query"
+          ></textarea>
+          <input type="submit" class="button" />
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% include partials/bottom_nav.ejs %> <% include partials/footer.ejs %>

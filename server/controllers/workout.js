@@ -8,7 +8,8 @@ module.exports.Dislayworkout = async (req,res,next)=>{ //< Mark function as asyn
        const workoutlist = await workout.find(); //< Use of await keyword
        res.render('workout/list', {
           title: 'Workout List', 
-          workoutlist: workoutlist
+          workoutlist: workoutlist,
+          displayName: req.user ? req.user.displayName: ''
        });
     }catch(err){
        console.error(err);
@@ -23,7 +24,8 @@ module.exports.Dislayworkout = async (req,res,next)=>{ //< Mark function as asyn
     try{
         res.render('workout/add',
         {
-            title:'Add Workout'
+            title:'Add Workout',
+            displayName: req.user ? req.user.displayName: ''
         })
     }
     catch(err)
@@ -67,6 +69,7 @@ module.exports.Editworkout = async (req,res,next)=>{
     res.render('workout/edit',
     {
         title:'Edit workout',
+        displayName: req.user ? req.user.displayName: '',
         workout:workoutToEdit
     })
 }

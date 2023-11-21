@@ -1,1 +1,1 @@
-module.exports = {"URI":"mongodb://127.0.0.1:27017/WorkoutTracker"}
+module.exports = {"URI":"mongodb+srv://soundgreat12:KurtCobain12052004@dat.sukci8r.mongodb.net/?retryWrites=true&w=majority"}

@@ -3,6 +3,17 @@ var router = express.Router();
 //const { router } = require('../config/app');
 let workout = require('../models/workout');
 let workoutController = require('../controllers/workout')
+let mongoose = require('mongoose');
+
+// helper function
+function requireAuth(req, res, next) {
+    if(!req.isAuthenticated())
+    {
+        return res.redirect('/login')
+    }
+    next();
+}
+
 /* Get route for the Bio workouts list */
 // Read Operation
 router.get('/', workoutController.Dislayworkout);
@@ -16,4 +27,5 @@ router.get('/edit/:id', workoutController.Editworkout);
 router.post('/edit/:id', workoutController.ProcessEditworkout);
 /* Get to perform Delete Operation --> Delete Operation */
 router.get('/delete/:id', workoutController.Deleteworkout);
- module.exports = router;
+
+module.exports = router;

@@ -104,7 +104,8 @@ router.get('/logout', function(req, res, next) {
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { 
-    title: 'Home'  
+    title: 'Home',
+    displayName: req.user ? req.user.displayName: ''  
   });
 });
 
@@ -112,7 +113,8 @@ router.get('/', function(req, res, next) {
 /* GET home page. */
 router.get('/home', function(req, res, next) {
   res.render('index', { 
-    title: 'Home'  
+    title: 'Home'  ,
+    displayName: req.user ? req.user.displayName: ''
   });
 });
 
@@ -120,14 +122,16 @@ router.get('/home', function(req, res, next) {
 /* GET exercise page. */
 router.get('/exercise', function(req, res, next) {
   res.render('exercise', { 
-    title: 'Exercise'  
+    title: 'Exercise',
+    displayName: req.user ? req.user.displayName: ''
   });
 });
 
 /* GET Contact page. */
 router.get('/contactus', function(req, res, next) {
   res.render('contact', { 
-    title: 'Contact'  
+    title: 'Contact',
+    displayName: req.user ? req.user.displayName: ''  
   });
 });
 

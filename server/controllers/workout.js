@@ -50,7 +50,6 @@ module.exports.Processworkout = async (req,res,next)=>{
         });
         workout.create(newworkout).then(() =>{
             res.redirect('/workout')
-        console.log(newworkout.Weight)
         })
     }
     catch(error){

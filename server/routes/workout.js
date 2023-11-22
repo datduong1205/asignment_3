@@ -18,14 +18,14 @@ function requireAuth(req, res, next) {
 // Read Operation
 router.get('/', workoutController.Dislayworkout);
 /* Get route for Add workout page --> Create */
-router.get('/add', workoutController.Addworkout); 
+router.get('/add', requireAuth, workoutController.Addworkout); 
 /* Post route for Add workout page --> Create */
-router.post('/add', workoutController.Processworkout);
+router.post('/add', requireAuth, workoutController.Processworkout);
 /* Get route for displaying the Edit workout page --> Update */
-router.get('/edit/:id', workoutController.Editworkout);
+router.get('/edit/:id', requireAuth, workoutController.Editworkout);
 /* Post route for processing the Edit workout page --> Update */
-router.post('/edit/:id', workoutController.ProcessEditworkout);
+router.post('/edit/:id', requireAuth, workoutController.ProcessEditworkout);
 /* Get to perform Delete Operation --> Delete Operation */
-router.get('/delete/:id', workoutController.Deleteworkout);
+router.get('/delete/:id', requireAuth, workoutController.Deleteworkout);
 
 module.exports = router;
